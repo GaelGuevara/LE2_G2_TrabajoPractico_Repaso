@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tp-Repaso</title>
+    <link rel="stylesheet" href="estilo3.css">
+</head>
+<body>
+
+    <h1>Lista de Tareas</h1>
+
+    <div>
+        <input type="text" id="nuevaTarea" placeholder="Agregar una tarea...">
+        <button onclick="agregarTarea()">Agregar</button>
+    </div>
+
+    <ul id="listaDeTareas"></ul>
+
+    <script>
+        function agregarTarea() {
+            const tareaInput = document.getElementById("nuevaTarea");
+            const tareaTexto = tareaInput.value.trim();
+
+            if (tareaTexto === "") {
+                alert("Primero ingresa una tarea.");
+                return;
+            }
+
+            const listaDeTareas = document.getElementById("listaDeTareas");
+
+            const nuevaTarea = document.createElement("li");
+
+            nuevaTarea.textContent = tareaTexto;
+
+            nuevaTarea.addEventListener("click", function () {
+                nuevaTarea.classList.toggle("tachado");
+            });
+            
+            const botonEliminar = document.createElement("button");
+            botonEliminar.textContent = "Eliminar";
+            botonEliminar.addEventListener("click", function () {
+                listaDeTareas.removeChild(nuevaTarea);
+            });
+
+            nuevaTarea.appendChild(botonEliminar);
+            listaDeTareas.appendChild(nuevaTarea);
+            tareaInput.value = "";
+        }
+
+    </script>
+
+
+
+</body>
+</html>

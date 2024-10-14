@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
+}
+
+.led-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.led {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 20px;
+}
+
+#ledRojo {
+    background-color: #ff0000;
+}
+
+#ledVerde {
+    background-color: #00ff00;
+}
+
+#ledAzul {
+    background-color: #0000ff;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    background-color: #555;
+}

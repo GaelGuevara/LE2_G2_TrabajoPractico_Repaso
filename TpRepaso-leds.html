@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tp-Repaso</title>
+    <link rel="stylesheet" href="estilo5.css">
+</head>
+<body>
+    <h1>Control de LEDs</h1>
+
+    <div class="led-control">
+        <div class="led" id="ledRojo"></div>
+        <button onclick="encenderLed('Rojo')">Encender LED Rojo</button>
+    </div>
+
+    <div class="led-control">
+        <div class="led" id="ledVerde"></div>
+        <button onclick="encenderLed('Verde')">Encender LED Verde</button>
+    </div>
+
+    <div class="led-control">
+        <div class="led" id="ledAzul"></div>
+        <button onclick="encenderLed('Azul')">Encender LED Azul</button>
+    </div>
+
+    <script>
+
+    function encenderLed(color) {
+    const led = document.getElementById(`led${color}`);
+
+        if (led.style.opacity === "1") {
+            led.style.opacity = "0.3";  
+            console.log(`El LED ${color} se ha apagado.`);
+        } else {
+            led.style.opacity = "1";    
+            console.log(`El LED ${color} se ha encendido.`);
+        }
+
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tp-Repaso</title>
+    <link rel="stylesheet" href="estilo2.css" />
+  </head>
+  <body>
+    <section class="formulario">
+      <form
+        action="/action_page.php"
+        name="formm"
+        onsubmit="return validateForm()"
+        method="get"
+      >
+        <h1>Formulario</h1>
+        <label for="username">Nombre y Apellido</label>
+        <input type="text" id="username" name="username" required />
+        <label for="email">Correo Electronico</label>
+        <input
+          type="email"
+          id="mail"
+          name="mail"
+          placeholder="alumno@itisjt.edu.ar"
+          required
+          minlength="8"
+          maxlength="25"
+        />
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="text">DNI</label>
+        <input
+          type="number"
+          name="DNI"
+          id="DNI"
+          required
+          maxlength="8"
+          minlength="8"
+        />
+        <input type="submit" value="Enviar" />
+      </form>
+    </section>
+    <script>
+      function validateForm() {
+        let nombre = document.forms["formm"]["username"].value;
+        let mail = document.forms["formm"]["mail"].value;
+        let contra = document.forms["formm"]["password"].value;
+        let dni = document.forms["formm"]["DNI"].value;
+
+        if (nombre == "") {
+          alert("Es necesario un nombre");
+          return false;
+        } else if (mail == "" && mail.indexOf("@") == -1) {
+          alert("Es necesario un mail");
+          return false;
+        } else if (contra == "") {
+          alert("Es necesario una contraseña");
+          return false;
+        } else if (dni.length < 8) {
+          alert("Es necesario un DNI");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tp-Repaso</title>
+    <link rel="stylesheet" href="estilo6.css">
+</head>
+<body>
+
+    <h1>Control de Brillo del LED</h1>
+
+    <div class="led" id="led"></div>
+
+    <input type="range" id="controlBrillo" min="0" max="255" value="0" oninput="ajustarBrillo(this.value)">
+
+    <p>Brillo actual: <span id="valorBrillo">0</span></p>
+
+    <script>
+        function ajustarBrillo(valor) {
+        const led = document.getElementById("led");
+        const valorBrillo = document.getElementById("valorBrillo");
+
+        let opacidad = valor / 255;
+        led.style.opacity = opacidad;
+
+        valorBrillo.textContent = valor;
+}
+
+    </script>
+</body>
+</html>
